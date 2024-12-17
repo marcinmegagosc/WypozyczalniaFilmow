@@ -1,27 +1,42 @@
 package pl.gornik.model;
 
-public class VHS extends Movie {
-    private String standard;
+public class VHS {
+    private String title;
+    private boolean isRented;
 
-
-    public VHS(String director, String genre, boolean isRented, int releaseYear, String title, String standard) {
-        super(director, genre, isRented, releaseYear, title);
-        this.standard = standard;
+    public VHS(String title) {
+        this.title = title;
+        this.isRented = false;
     }
 
-    public String getStandard() {
-        return standard;
+    public String getTitle() {
+        return title;
     }
 
-    public void setStandard(String standard) {
-        this.standard = standard;
+    public boolean isRented() {
+        return isRented;
+    }
+
+    public void rent() {
+        if (!isRented) {
+            isRented = true;
+            System.out.println("Kaseta VHS została wypozyczone: " + title);
+        } else {
+            System.out.println("Ktoś już wypożyczył tą kasetę VHS: " + title);
+        }
+    }
+
+    public void returnVHS() {
+        if (isRented) {
+            isRented = false;
+            System.out.println("Kaseta VHS została zwrócona" + title);
+        } else {
+            System.out.println("Kaseta VHS nie była wypożyczona" + title);
+        }
     }
 
     @Override
     public String toString() {
-        return "VHS{" +
-                "standard='" + standard + '\'' +
-                '}';
+        return "VHS: " + title + (isRented ? " [RENTED]" : " [AVAILABLE]");
     }
-
 }

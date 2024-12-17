@@ -1,11 +1,11 @@
 package pl.gornik.model;
 
 public class Movie {
-    private String title;
-    private String director;
-    private int year;
-    private String genre;
-    private boolean isRented;
+    private String title;       // Tytuł filmu
+    private String director;    // Reżyser filmu
+    private int year;           // Rok wydania filmu
+    private String genre;       // Gatunek filmu
+    private boolean isRented;   // Status wypożyczenia filmu
 
 
     public Movie(String title, String director, int year, String genre) {
@@ -13,7 +13,7 @@ public class Movie {
         this.director = director;
         this.year = year;
         this.genre = genre;
-        this.isRented = false;
+        this.isRented = false; // Domyślnie film jest dostępny
     }
 
 
@@ -30,8 +30,9 @@ public class Movie {
     public void rent() {
         if (!isRented) {
             isRented = true;
+            System.out.println("Movie rented: " + title);
         } else {
-            System.out.println("Movie is already rented.");
+            System.out.println("Movie is already rented: " + title);
         }
     }
 
@@ -39,11 +40,13 @@ public class Movie {
     public void returnMovie() {
         if (isRented) {
             isRented = false;
+            System.out.println("Movie returned: " + title);
         } else {
-            System.out.println("Movie is not rented.");
+            System.out.println("Movie is not rented: " + title);
         }
     }
 
+    // Reprezentacja tekstowa obiektu Movie
     @Override
     public String toString() {
         return title + " (" + year + ") - " + director + " | Genre: " + genre +

@@ -1,26 +1,42 @@
 package pl.gornik.model;
 
-public class DVD extends Movie {
-    private String format;
+public class DVD {
+    private String title;
+    private boolean isRented;
 
-    public DVD(String director, String genre, boolean isRented, int releaseYear, String title, String format) {
-        super(director, genre, isRented, releaseYear, title);
-        this.format = format;
+    public DVD(String title) {
+        this.title = title;
+        this.isRented = false;
     }
 
-    public String getFormat() {
-        return format;
+    public String getTitle() {
+        return title;
     }
 
-    public void setFormat(String format) {
-        this.format = format;
+    public boolean isRented() {
+        return isRented;
+    }
+
+    public void rent() {
+        if (!isRented) {
+            isRented = true;
+            System.out.println("DVD wypożyczone: " + title);
+        } else {
+            System.out.println("DVD zostało już przez kogoś wypożyczone: " + title);
+        }
+    }
+
+    public void returnDVD() {
+        if (isRented) {
+            isRented = false;
+            System.out.println("DVD zwrócone: " + title);
+        } else {
+            System.out.println("DVD nie było jeszcze wypożyczone: " + title);
+        }
     }
 
     @Override
     public String toString() {
-        return "DVD{" +
-                "format='" + format + '\'' +
-                '}';
+        return "DVD: " + title + (isRented ? " [RENTED]" : " [AVAILABLE]");
     }
-
 }
