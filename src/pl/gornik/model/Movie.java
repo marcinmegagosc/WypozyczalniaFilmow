@@ -1,4 +1,4 @@
-package pl.gornik;
+package pl.gornik.model;
 
 public class Movie {
     private String title;

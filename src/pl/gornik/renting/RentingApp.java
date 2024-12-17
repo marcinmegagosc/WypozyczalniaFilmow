@@ -1,6 +1,6 @@
-package pl.gornik;
+package pl.gornik.renting;
 
-public class Main {
+public class RentingApp {
     public static void main(String[] args) {
         System.out.println("Wypożyczalnia filmów");
     }
