@@ -15,10 +15,6 @@ public class Rental {
         this.returnDate = returnDate;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
     public Movie getMovie() {
         return movie;
     }
@@ -33,11 +29,8 @@ public class Rental {
 
     @Override
     public String toString() {
-        return "Rental{" +
-                "customer=" + customer +
-                ", movie=" + movie +
-                ", rentalDate=" + rentalDate +
-                ", returnDate=" + returnDate +
-                '}';
+        return "Wypożyczenie: " + movie.getTitle() +
+                " przez " + customer.toString() +
+                " (Od: " + rentalDate + " Do: " + returnDate + ")";
     }
 }
