@@ -14,7 +14,6 @@ RentingApp to aplikacja służąca do zarządzania wypożyczalnią filmów. Umo�
   - RentalService
   - Validator
   - RentingApp
-- Jak uruchomić
 
 ---
 
